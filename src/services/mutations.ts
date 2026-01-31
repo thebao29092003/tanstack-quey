@@ -27,7 +27,7 @@ export function useCreateTodo() {
         console.log("success")
     },
 
-    onSettled: () => {
+    onSettled: (data, error, ) => {
         console.log("onSettled")
     }
   });
