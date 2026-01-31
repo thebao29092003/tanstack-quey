@@ -24,6 +24,7 @@ Cách hoạt động:
     Dependency: Nếu queryKey thay đổi (do state hoặc props), query tự động refetch. Điều này hữu ích cho queries phụ thuộc vào biến động.
 Trong code này, ['users'] đảm bảo query lấy danh sách ID users được cache riêng biệt, và có thể invalidate dễ dàng khi cần cập nhật data. Nếu không có queryKey, query sẽ không được cache hoặc quản lý đúng cách.
  */
+// Hàm không tham số: Viết tên hàm luôn cho gọn.
 export function useTodosIds (){
    return useQuery({
     queryKey: ['todos'],
@@ -31,6 +32,7 @@ export function useTodosIds (){
    })            
 }
 
+// Hàm có tham số: Phải bọc trong một arrow function.
 export function useTodos(ids: (number | undefined)[] | undefined){
     return useQueries({
         queries: (ids ?? [])?.map((id) => {
